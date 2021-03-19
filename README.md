@@ -14,6 +14,10 @@ $ npx eslint --init
 ### Prettier
 ```
 $ npm install prettier
+
+$ npx prettier --check .
+
+$ npx prettier --write .
 ```
 
 ### Connect ESLint and Prettier
