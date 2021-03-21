@@ -40,3 +40,9 @@ $ npm install --save-dev eslint-plugin-prettier
 ### VScode
 1. install eslint
 2. install prettier
+
+
+### config on windows 10 (CRLF/LF problem)
+```
+$ git config --global core.autocrlf false
+```
