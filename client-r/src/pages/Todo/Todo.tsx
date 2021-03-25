@@ -1,10 +1,9 @@
 import React from 'react';
-import './Todo.css';
 
 const Todo: React.FC = () => {
     return (
         <div>
-            <h1>Welcome to Space</h1>
+            <h1>This is todo page</h1>
         </div>
     );
 };

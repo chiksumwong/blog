@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 // App
 import './index.css';
-import App from './pages/App/App';
+import App from './App/App';
 
 // Performance
 import reportWebVitals from './reportWebVitals';
