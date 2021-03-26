@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import Home from '.././pages/Home/Home';
-import Login from '.././pages/Login/Login';
+import SignIn from '.././pages/SignIn/SignIn';
+import SignUp from '.././pages/SignUp/SignUp';
 import Todo from '.././pages/Todo/Todo';
 
 const App: React.FC = () => {
@@ -16,7 +17,10 @@ const App: React.FC = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/login">Login</Link>
+                        <Link to="/sign_in">Sign In</Link>
+                    </li>
+                    <li>
+                        <Link to="/sign_up">Sign Up</Link>
                     </li>
                     <li>
                         <Link to="/todo">Todo</Link>
@@ -29,8 +33,14 @@ const App: React.FC = () => {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/login">
-                        <Login />
+                    <Route exact path="/home">
+                        <Home />
+                    </Route>
+                    <Route path="/sign_in">
+                        <SignIn />
+                    </Route>
+                    <Route path="/sign_up">
+                        <SignUp />
                     </Route>
                     <Route path="/todo">
                         <Todo />
