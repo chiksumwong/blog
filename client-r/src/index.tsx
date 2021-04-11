@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 
 // App
 import './index.css';
-import App from './App/App';
+import App from './app/App';
+import Footer from './components/Footer';
 
 // Performance
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +14,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
     <React.StrictMode>
         <App />
+        <Footer />
     </React.StrictMode>,
     document.getElementById('root')
 );

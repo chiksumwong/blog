@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 
-import Home from '.././pages/Home/Home';
-import SignIn from '.././pages/SignIn/SignIn';
-import SignUp from '.././pages/SignUp/SignUp';
-import Todo from '.././pages/Todo/Todo';
+import Home from '../pages/Home/Home';
+import SignIn from '../pages/SignIn/SignIn';
+import SignUp from '../pages/SignUp/SignUp';
+import Todo from '../pages/Todo/Todo';
 
 const App: React.FC = () => {
     return (
