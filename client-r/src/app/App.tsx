@@ -7,6 +7,7 @@ import Home from '../pages/Home/Home';
 import SignIn from '../pages/SignIn/SignIn';
 import SignUp from '../pages/SignUp/SignUp';
 import Todo from '../pages/Todo/Todo';
+import Dashboard from '../pages/Dashboard/Dashboard';
 
 const App: React.FC = () => {
     return (
@@ -24,6 +25,9 @@ const App: React.FC = () => {
                     </li>
                     <li>
                         <Link to="/todo">Todo</Link>
+                    </li>
+                    <li>
+                        <Link to="/dashboard">Dashboard</Link>
                     </li>
                 </ul>
 
@@ -44,6 +48,9 @@ const App: React.FC = () => {
                     </Route>
                     <Route path="/todo">
                         <Todo />
+                    </Route>
+                    <Route path="/dashboard">
+                        <Dashboard />
                     </Route>
                 </Switch>
             </div>
