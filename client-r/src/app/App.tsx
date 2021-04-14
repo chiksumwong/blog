@@ -8,6 +8,7 @@ import SignIn from '../pages/SignIn/SignIn';
 import SignUp from '../pages/SignUp/SignUp';
 import Todo from '../pages/Todo/Todo';
 import Dashboard from '../pages/Dashboard/Dashboard';
+import TicTacToeGame from '../pages/TicTacToe/Game';
 
 const App: React.FC = () => {
     return (
@@ -28,6 +29,9 @@ const App: React.FC = () => {
                     </li>
                     <li>
                         <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                        <Link to="/tic-tac-to-game">TicTacToeGame</Link>
                     </li>
                 </ul>
 
@@ -51,6 +55,9 @@ const App: React.FC = () => {
                     </Route>
                     <Route path="/dashboard">
                         <Dashboard />
+                    </Route>
+                    <Route path="/tic-tac-to-game">
+                        <TicTacToeGame />
                     </Route>
                 </Switch>
             </div>
