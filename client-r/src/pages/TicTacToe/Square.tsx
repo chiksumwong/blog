@@ -3,13 +3,12 @@ import React from 'react';
 import './TicTacToe.css';
 
 interface Props {
-    value: number;
+    value: string;
     onClickFunc: () => void;
 }
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-export default class Square extends React.Component<Props, any> {
-    render() {
+export default class Square extends React.Component<Props, never> {
+    render(): JSX.Element {
         return (
             <button className="square" onClick={this.props.onClickFunc}>
                 {this.props.value}

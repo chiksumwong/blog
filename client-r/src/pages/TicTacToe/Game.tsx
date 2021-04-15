@@ -3,16 +3,14 @@ import Board from './Board';
 
 import './TicTacToe.css';
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
 interface State {
-    history: any[];
+    history: { squares: string[] }[];
     stepNumber: number;
     xIsNext: boolean;
 }
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-export default class Game extends React.Component<any, State> {
-    constructor(props: any) {
+export default class Game extends React.Component<unknown, State> {
+    constructor(props: unknown) {
         super(props);
         this.state = {
             history: [
@@ -25,7 +23,7 @@ export default class Game extends React.Component<any, State> {
         };
     }
 
-    handleClick(i: number) {
+    handleClick(i: number): void {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
@@ -44,14 +42,14 @@ export default class Game extends React.Component<any, State> {
         });
     }
 
-    jumpTo(step: number) {
+    jumpTo(step: number): void {
         this.setState({
             stepNumber: step,
             xIsNext: step % 2 === 0,
         });
     }
 
-    render() {
+    render(): JSX.Element {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
@@ -93,9 +91,7 @@ export default class Game extends React.Component<any, State> {
     }
 }
 
-// ========================================
-
-function calculateWinner(squares: number[] | string[]) {
+function calculateWinner(squares: string[]) {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],

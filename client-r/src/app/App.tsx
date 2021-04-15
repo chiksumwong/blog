@@ -11,7 +11,7 @@ import Dashboard from '../pages/Dashboard/Dashboard';
 import TicTacToeGame from '../pages/TicTacToe/Game';
 
 export default class App extends React.Component {
-    render() {
+    render(): JSX.Element {
         return (
             <Router>
                 <div className="App">

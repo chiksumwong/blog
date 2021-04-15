@@ -3,15 +3,13 @@ import React from 'react';
 import Square from './Square';
 import './TicTacToe.css';
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
 interface Props {
-    squares: number[];
-    onClickFunc: any;
+    squares: string[];
+    onClickFunc: (i: number) => void;
 }
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-export default class Board extends React.Component<Props, any> {
-    renderSquare(i: number) {
+export default class Board extends React.Component<Props, never> {
+    renderSquare(i: number): JSX.Element {
         return (
             <Square
                 value={this.props.squares[i]}
@@ -20,7 +18,7 @@ export default class Board extends React.Component<Props, any> {
         );
     }
 
-    render() {
+    render(): JSX.Element {
         return (
             <div>
                 <div className="board-row">
