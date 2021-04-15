@@ -3,16 +3,16 @@ import Board from './Board';
 
 import './TicTacToe.css';
 
-interface IProps {}
-
-interface IState {
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+interface State {
     history: any[];
     stepNumber: number;
     xIsNext: boolean;
 }
 
-class Game extends React.Component<IProps, IState> {
-    constructor(props: IProps) {
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+export default class Game extends React.Component<any, State> {
+    constructor(props: any) {
         super(props);
         this.state = {
             history: [
@@ -72,14 +72,18 @@ class Game extends React.Component<IProps, IState> {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
+        // Game View
         return (
             <div className="game">
+                {/* Column left */}
                 <div className="game-board">
                     <Board
                         squares={current.squares}
-                        onClick={(i: number) => this.handleClick(i)}
+                        onClickFunc={(i: number) => this.handleClick(i)}
                     />
                 </div>
+
+                {/* Column Right */}
                 <div className="game-info">
                     <div>{status}</div>
                     <ol>{moves}</ol>
@@ -114,5 +118,3 @@ function calculateWinner(squares: number[] | string[]) {
     }
     return null;
 }
-
-export default Game;

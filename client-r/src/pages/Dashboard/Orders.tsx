@@ -63,6 +63,7 @@ const rows = [
     ),
 ];
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 function preventDefault(event: any) {
     event.preventDefault();
 }

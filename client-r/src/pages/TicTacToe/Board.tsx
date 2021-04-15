@@ -3,19 +3,19 @@ import React from 'react';
 import Square from './Square';
 import './TicTacToe.css';
 
-interface IProps {
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+interface Props {
     squares: number[];
-    onClick: any;
+    onClickFunc: any;
 }
 
-interface IState {}
-
-class Board extends React.Component<IProps, IState> {
-    renderSquare(i) {
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+export default class Board extends React.Component<Props, any> {
+    renderSquare(i: number) {
         return (
             <Square
                 value={this.props.squares[i]}
-                onClick={() => this.props.onClick(i)}
+                onClickFunc={() => this.props.onClickFunc(i)}
             />
         );
     }
@@ -42,5 +42,3 @@ class Board extends React.Component<IProps, IState> {
         );
     }
 }
-
-export default Board;

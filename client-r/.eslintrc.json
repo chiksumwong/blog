@@ -21,6 +21,17 @@
     "plugins": ["react", "@typescript-eslint"],
     "rules": {
         "semi": ["error", "always"],
-        "quotes": ["error", "single"]
-    }
+        "quotes": ["error", "single"],
+        "prettier/prettier": ["error", { "endOfLine": "auto" }],
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    },
+    "overrides": [
+      {
+        // enable the rule specifically for TypeScript files
+        "files": ["*.js", "*.ts"],
+        "rules": {
+          "@typescript-eslint/explicit-module-boundary-types": "warn"
+        }
+      }
+    ]
 }

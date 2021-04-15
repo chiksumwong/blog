@@ -1,17 +1,19 @@
 import React from 'react';
+
 import './TicTacToe.css';
 
-type Props = {
-  value: string | number,
-  onClick: any,
+interface Props {
+    value: number;
+    onClickFunc: () => void;
 }
 
-const Square: React.FC<Props> = ({value, onClick}) => {
-    return (
-        <button className="square" onClick={onClick}>
-            {value}
-        </button>
-    );
-};
-
-export default Square;
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+export default class Square extends React.Component<Props, any> {
+    render() {
+        return (
+            <button className="square" onClick={this.props.onClickFunc}>
+                {this.props.value}
+            </button>
+        );
+    }
+}
