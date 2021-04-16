@@ -7,12 +7,10 @@ interface Props {
     onClickFunc: () => void;
 }
 
-export default class Square extends React.Component<Props, never> {
-    render(): JSX.Element {
-        return (
-            <button className="square" onClick={this.props.onClickFunc}>
-                {this.props.value}
-            </button>
-        );
-    }
+export default function Square(props: Props): JSX.Element {
+    return (
+        <button className="square" onClick={props.onClickFunc}>
+            {props.value}
+        </button>
+    );
 }

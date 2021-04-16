@@ -1,6 +1,7 @@
 import React from 'react';
-import Board from './Board';
 
+import Clock from './Clock';
+import Board from './Board';
 import './TicTacToe.css';
 
 interface State {
@@ -24,12 +25,20 @@ export default class Game extends React.Component<unknown, State> {
     }
 
     handleClick(i: number): void {
+        // get squares
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
-        const squares = current.squares.slice();
+        const squares = current.squares.slice(); // return a copy array
+        // Immutability, replace the current with copy array after modify the copy array
+        // More Info: https://zh-hant.reactjs.org/tutorial/tutorial.html#why-immutability-is-important
+
+        // find winner or not null (of final click)
         if (calculateWinner(squares) || squares[i]) {
+            // end game
             return;
         }
+
+        // add history
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             history: history.concat([
@@ -73,6 +82,7 @@ export default class Game extends React.Component<unknown, State> {
         // Game View
         return (
             <div className="game">
+                <Clock />
                 {/* Column left */}
                 <div className="game-board">
                     <Board
