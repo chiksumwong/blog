@@ -2,7 +2,9 @@ import React from 'react';
 
 import Clock from './Clock';
 import Board from './Board';
+import Counter from './Counter';
 import './TicTacToe.css';
+import { Container } from '@material-ui/core';
 
 interface State {
     history: { squares: string[] }[];
@@ -81,22 +83,26 @@ export default class Game extends React.Component<unknown, State> {
 
         // Game View
         return (
-            <div className="game">
+            <Container maxWidth="lg">
                 <Clock />
-                {/* Column left */}
-                <div className="game-board">
-                    <Board
-                        squares={current.squares}
-                        onClickFunc={(i: number) => this.handleClick(i)}
-                    />
-                </div>
+                <Counter />
+                <br />
+                <div className="game">
+                    {/* Column left */}
+                    <div className="game-board">
+                        <Board
+                            squares={current.squares}
+                            onClickFunc={(i: number) => this.handleClick(i)}
+                        />
+                    </div>
 
-                {/* Column Right */}
-                <div className="game-info">
-                    <div>{status}</div>
-                    <ol>{moves}</ol>
+                    {/* Column Right */}
+                    <div className="game-info">
+                        <div>{status}</div>
+                        <ol>{moves}</ol>
+                    </div>
                 </div>
-            </div>
+            </Container>
         );
     }
 }
