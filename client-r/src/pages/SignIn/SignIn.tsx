@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SignIn: React.FC = () => {
+function SignIn(): JSX.Element {
     const classes = useStyles();
 
     return (
@@ -115,6 +115,6 @@ const SignIn: React.FC = () => {
             </Box>
         </Container>
     );
-};
+}
 
 export default SignIn;

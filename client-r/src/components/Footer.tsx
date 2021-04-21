@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Footer: React.FC = () => {
+function Footer(): JSX.Element {
     const classes = useStyles();
 
     return (
@@ -68,6 +68,6 @@ const Footer: React.FC = () => {
             </footer>
         </div>
     );
-};
+}
 
 export default Footer;

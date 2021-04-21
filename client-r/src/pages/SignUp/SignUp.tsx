@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SignUp: React.FC = () => {
+function SignUp(): JSX.Element {
     const classes = useStyles();
 
     return (
@@ -142,6 +142,6 @@ const SignUp: React.FC = () => {
             </Box>
         </Container>
     );
-};
+}
 
 export default SignUp;
