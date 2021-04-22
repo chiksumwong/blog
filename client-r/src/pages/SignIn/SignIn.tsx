@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Avatar from '@material-ui/core/Avatar';
@@ -47,6 +47,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SignIn(): JSX.Element {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    function handleSubmit(event: React.SyntheticEvent): void {
+        event.preventDefault();
+        console.log('Email:', email, 'Password: ', password);
+        // You should see email and password in console.
+        // ..code to submit form to backend here...
+    }
+
     const classes = useStyles();
 
     return (
@@ -59,7 +69,11 @@ function SignIn(): JSX.Element {
                 <Typography component="h1" variant="h5">
                     Sign in
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form
+                    className={classes.form}
+                    noValidate
+                    onSubmit={handleSubmit}
+                >
                     <TextField
                         variant="outlined"
                         margin="normal"
@@ -70,6 +84,10 @@ function SignIn(): JSX.Element {
                         name="email"
                         autoComplete="email"
                         autoFocus
+                        value={email}
+                        onInput={(e) =>
+                            setEmail((e.target as HTMLTextAreaElement).value)
+                        }
                     />
                     <TextField
                         variant="outlined"
@@ -81,6 +99,10 @@ function SignIn(): JSX.Element {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        value={password}
+                        onInput={(e) =>
+                            setPassword((e.target as HTMLTextAreaElement).value)
+                        }
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
@@ -92,7 +114,6 @@ function SignIn(): JSX.Element {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
-                        href="/home"
                     >
                         Sign In
                     </Button>
