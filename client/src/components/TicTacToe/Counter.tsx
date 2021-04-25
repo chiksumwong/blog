@@ -11,7 +11,7 @@ React Hoot
 
 import React, { useState, useEffect } from 'react';
 
-export default function Counter(): JSX.Element {
+function Counter(): JSX.Element {
     // init to 0
     const [count, setCount] = useState(0);
     //const [todos, setTodos] = useState([{ text: 'First Todo Item' }]);
@@ -29,3 +29,5 @@ export default function Counter(): JSX.Element {
         </div>
     );
 }
+
+export default Counter;

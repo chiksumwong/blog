@@ -8,7 +8,7 @@ interface Props {
     onClickFunc: (i: number) => void;
 }
 
-export default class Board extends React.Component<Props, never> {
+class Board extends React.Component<Props, never> {
     renderSquare(i: number): JSX.Element {
         return (
             <Square
@@ -40,3 +40,5 @@ export default class Board extends React.Component<Props, never> {
         );
     }
 }
+
+export default Board;

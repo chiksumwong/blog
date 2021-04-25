@@ -4,7 +4,7 @@ interface State {
     date: Date;
 }
 
-export default class Clock extends React.Component<unknown, State> {
+class Clock extends React.Component<unknown, State> {
     timerID: number;
 
     constructor(props: unknown) {
@@ -46,3 +46,5 @@ export default class Clock extends React.Component<unknown, State> {
         );
     }
 }
+
+export default Clock;

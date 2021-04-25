@@ -12,7 +12,7 @@ interface State {
     xIsNext: boolean;
 }
 
-export default class Game extends React.Component<unknown, State> {
+class Game extends React.Component<unknown, State> {
     constructor(props: unknown) {
         super(props);
         this.state = {
@@ -130,3 +130,5 @@ function calculateWinner(squares: string[]) {
     }
     return null;
 }
+
+export default Game;
