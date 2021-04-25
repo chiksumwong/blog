@@ -9,16 +9,16 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
 // Generate Order Data
-function createData(
+const createData = (
     id: number,
     date: string,
     name: string,
     shipTo: string,
     paymentMethod: string,
     amount: number
-) {
+) => {
     return { id, date, name, shipTo, paymentMethod, amount };
-}
+};
 
 const rows = [
     createData(
@@ -64,9 +64,9 @@ const rows = [
 ];
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-function preventDefault(event: any) {
+const preventDefault = (event: any) => {
     event.preventDefault();
-}
+};
 
 const useStyles = makeStyles((theme) => ({
     seeMore: {
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Orders(): JSX.Element {
+const Orders = (): JSX.Element => {
     const classes = useStyles();
     return (
         <React.Fragment>
@@ -108,4 +108,6 @@ export default function Orders(): JSX.Element {
             </div>
         </React.Fragment>
     );
-}
+};
+
+export default Orders;

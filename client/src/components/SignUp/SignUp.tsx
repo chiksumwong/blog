@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-function Copyright() {
+const Copyright = () => {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
@@ -24,7 +24,7 @@ function Copyright() {
             {'.'}
         </Typography>
     );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SignUp(): JSX.Element {
+const SignUp = (): JSX.Element => {
     const classes = useStyles();
 
     return (
@@ -142,6 +142,6 @@ function SignUp(): JSX.Element {
             </Box>
         </Container>
     );
-}
+};
 
 export default SignUp;

@@ -13,7 +13,7 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
-function Copyright() {
+const Copyright = () => {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
@@ -24,7 +24,7 @@ function Copyright() {
             {'.'}
         </Typography>
     );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SignIn(): JSX.Element {
+const SignIn = (): JSX.Element => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -136,6 +136,6 @@ function SignIn(): JSX.Element {
             </Box>
         </Container>
     );
-}
+};
 
 export default SignIn;

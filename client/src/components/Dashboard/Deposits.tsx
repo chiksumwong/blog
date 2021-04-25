@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-function preventDefault(event: any) {
+const preventDefault = (event: any) => {
     event.preventDefault();
-}
+};
 
 const useStyles = makeStyles({
     depositContext: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Deposits(): JSX.Element {
+const Deposits = (): JSX.Element => {
     const classes = useStyles();
     return (
         <React.Fragment>
@@ -36,4 +36,6 @@ export default function Deposits(): JSX.Element {
             </div>
         </React.Fragment>
     );
-}
+};
+
+export default Deposits;

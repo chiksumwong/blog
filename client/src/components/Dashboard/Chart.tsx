@@ -11,9 +11,9 @@ import {
 import Title from './Title';
 
 // Generate Sales Data
-function createData(time: string, amount: number | void) {
+const createData = (time: string, amount: number | void) => {
     return { time, amount };
-}
+};
 
 const data = [
     createData('00:00', 0),
@@ -27,7 +27,7 @@ const data = [
     createData('24:00', undefined),
 ];
 
-export default function Chart(): JSX.Element {
+const Chart = (): JSX.Element => {
     const theme = useTheme();
 
     return (
@@ -69,4 +69,6 @@ export default function Chart(): JSX.Element {
             </ResponsiveContainer>
         </React.Fragment>
     );
-}
+};
+
+export default Chart;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home(): JSX.Element {
+const Home = (): JSX.Element => {
     return (
         <div>
             <h1>This is Home page</h1>
         </div>
     );
-}
+};
 
 export default Home;
